@@ -27,12 +27,6 @@ app.use(errorHandler);
 
 await connectMongoDB();
 
-import { sendEmail } from './utils/sendMail.js';
-
-sendEmail({ to: 'test@example.com', subject: 'Test', html: '<p>test</p>' })
-  .then(() => console.log('Email sent'))
-  .catch(err => console.error('Email failed:', err.message));
-
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
